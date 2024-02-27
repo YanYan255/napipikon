@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<!-- Author: Shorouk Abdelaziz  https://shorouk.dev -->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Socials</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      font-family: "Poppins", sans-serif;
+      place-items: center;
+    }
+
+    .wrapper {
+      padding-top: 10px;
+      display: inline-flex;
+    }
+
+    .icon {
+      /* Initial icon size */
+      font-size: 2em;
+      /* Initial icon color */
+      color: #7a7a7a;
+      /* Transition for smooth hover effect */
+      transition: all 0.3s ease;
+    }
+
+    /* Enlarge icon on hover */
+    .social:hover .icon {
+      font-size: 2.5em;
+    }
+
+    /* Change color of specific icons on hover */
+    .gmail:hover {
+      color: #23c8c8;
+    }
+
+    .drive:hover {
+      color: #0066ff; /* Google Drive color */
+    }
+
+    .sheets:hover {
+      color: #0f9d58; /* Google Sheets color */
+    }
+
+    .classroom:hover {
+      color: #4285f4; /* Google Classroom color */
+    }
+
+    .grammarly:hover {
+      color: #00b300; /* Grammarly color */
+    }
+
+    .youtube:hover {
+      color: #FF0000; /* YouTube color */
+    }
+
+    .discord:hover {
+      color: #7289da; /* Discord color */
+    }
+
+    .canva:hover {
+      color: #00c4cc; /* Canva color */
+    }
+
+    .social {
+      position: relative;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .icon-name {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8em;
+      color: #000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .social:hover .icon-name {
+      opacity: 1;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <!-- Start Gmail Icon -->
+    <div id="gmail" onclick="navigate('https://mail.google.com/')" class="social">
+      <span class="icon gmail"><i class="fab fa-google"></i></span>
+      <span class="icon-name">Gmail</span>
+    </div>
+    <!-- End Gmail Icon -->
+
+    <!-- Start Google Drive Icon -->
+    <div id="drive" onclick="navigate('https://drive.google.com/') " class="social">
+      <span class="icon drive"><i class="fab fa-google-drive"></i></span>
+      <span class="icon-name">Google Drive</span>
+    </div>
+    <!-- End Google Drive Icon -->
+
+    <!-- Start Google Sheets Icon -->
+    <div id="sheets" onclick="navigate('https://sheets.google.com/') " class="social">
+      <span class="icon sheets"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Google_Sheets_2020_Logo.svg/1200px-Google_Sheets_2020_Logo.svg.png" width="40" height="40"></span>
+      <span class="icon-name">Google Sheets</span>
+    </div>
+    <!-- End Google Sheets Icon -->
+
+    <!-- Start Google Classroom Icon -->
+    <div id="classroom" onclick="navigate('https://classroom.google.com/') " class="social">
+      <span class="icon classroom"><i class="fab fa-google-classroom"></i></span>
+      <span class="icon-name">Google Classroom</span>
+    </div>
+    <!-- End Google Classroom Icon -->
+
+    <!-- Start Grammarly Icon -->
+    <div id="grammarly" onclick="navigate('https://app.grammarly.com/')" class="social">
+      <span class="icon grammarly"><img src="https://www.mooclab.club/showcase/grammarly.503/cover-image" width="40" height="40"></span>
+      <span class="icon-name">Grammarly</span>
+    </div>
+    <!-- End Grammarly Icon -->
+
+    <!-- Start YouTube Icon -->
+    <div id="youtube" onclick="navigate('https://www.youtube.com/c/JPBuduan')" class="social">
+      <span class="icon youtube"><i class="fab fa-youtube"></i></span>
+      <span class="icon-name">JP Buduan</span>
+    </div>
+    <!-- End YouTube Icon -->
+
+    <!-- Start Discord Icon -->
+    <div id="discord" onclick="openApplication('discord')" class="social">
+      <span class="icon discord"><i class="fab fa-discord"></i></span>
+      <span class="icon-name">Discord</span>
+    </div>
+    <!-- End Discord Icon -->
+
+    <!-- Start Canva Icon -->
+    <div id="canva" onclick="openApplication('canva')" class="social">
+      <span class="icon canva"><img src="https://www.canva.com/favicon.ico" width="40" height="40"></span>
+      <span class="icon-name">Canva</span>
+    </div>
+    <!-- End Canva Icon -->
+
+  </div>
+
+  <script>
+    function navigate(url) {
+      window.open(url, '_blank').focus();
+    }
+
+    function openApplication(app) {
+      if (app === "discord") {
+        // Replace 'C:\\Program Files\\Discord\\Update.exe' with the correct path to your Discord application
+        require('child_process').execFile('C:\\Program Files\\Discord\\Update.exe');
+      } else if (app === "canva") {
+        // Replace 'C:\\Program Files\\Canva\\Canva.exe' with the correct path to your Canva application
+        require('child_process').execFile('C:\\Program Files\\Canva\\Canva.exe');
+      }
+    }
+  </script>
+
+</body>
+
+</html>
